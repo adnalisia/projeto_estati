@@ -17,7 +17,7 @@ Esse artigo tem como objetivo analisar os resultados colhidos do tempo de execu�
   
 ## ✒️ Autores
 - Adna Farias
-- Júlia Nunes
 - José Leandro
+- Júlia Nunes
 - Lucas Américo
-- Sara Emilay
+- Sara Pereira
