@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from scipy.stats import kurtosis
 from scipy.stats import normaltest, probplot
 
-
 # Ler o arquivo de texto
 df = pd.read_csv('data_1.txt', sep='\t', header=None, names=['dados'])
 
@@ -66,4 +65,25 @@ probplot(df['dados'], dist='norm', plot=plt)
 plt.title('Q-Q plot dos Dados de Tempo de Execução')
 plt.xlabel('Quartis teóricos')
 plt.ylabel('Quartis dos dados')
+plt.show()
+
+
+
+# Limiar de variação aceitável (por exemplo, 0.5)
+limiar = 0.5
+
+# Testando se o desvio padrão está abaixo do limiar
+if desvio_padrao < limiar:
+    print("Os tempos de execução são consistentes (não há variação significativa).")
+else:
+    print("Os tempos de execução não são consistentes (há variação significativa).")
+
+
+# Plotando um gráfico de linha dos tempos de execução
+plt.figure(figsize=(10, 6))
+plt.plot(df['dados'])
+plt.title('Tendência dos Tempos de Execução ao Longo do Tempo')
+plt.xlabel('Amostra')
+plt.ylabel('Tempo de Execução')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.show()
